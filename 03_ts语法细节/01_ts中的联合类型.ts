@@ -5,3 +5,5 @@ foo = 'anbc'
 if (typeof foo === "string") {
   console.log(foo.length);
 }
+
+export {}
