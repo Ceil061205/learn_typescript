@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    /* 1. 基础编译配置 */
+    "target": "ES2016", // 编译后的 JavaScript 目标版本（ES3/ES5/ES6/ES2016/ESNext 等）
+    "module": "CommonJS", // 编译后的模块系统（CommonJS/ES6/ESNext/UMD 等），Webpack 兼容 CommonJS
+    "lib": ["ES2016", "DOM"], // 指定编译时需要依赖的内置库（如 DOM 用于浏览器环境，ES2016 用于新语法）
+    
+    /* 2. 路径与输出配置 */
+    "outDir": "./dist", // 编译后的 JavaScript 文件输出目录（与 Webpack output.path 对应）
+    "rootDir": "./src", // TypeScript 源码根目录（只编译该目录下的文件）
+    "sourceMap": true, // 生成 .map 源映射文件，方便调试（对应 Webpack devtool 配置）
+    "declaration": false, // 是否生成 .d.ts 类型声明文件（库开发场景设为 true）
+    "declarationMap": false, // 是否为 .d.ts 文件生成源映射（库开发场景使用）
+    
+    /* 3. 严格模式配置（推荐开启，规避潜在错误） */
+    "strict": true, // 开启所有严格类型检查选项（核心配置，开启后以下选项默认生效）
+    "strictNullChecks": true, // 严格空值检查（不允许 null/undefined 赋值给非空类型）
+    "strictPropertyInitialization": true, // 严格属性初始化检查（类属性必须显式初始化）
+    "noImplicitAny": true, // 不允许隐式 any 类型（未标注类型的变量/参数报错）
+    "noImplicitThis": true, // 不允许 this 隐式指向 any 类型
+    
+    /* 4. 代码质量与语法检查 */
+    "noUnusedLocals": true, // 未使用的局部变量报错
+    "noUnusedParameters": true, // 未使用的函数参数报错
+    "noImplicitReturns": true, // 函数分支未全部返回值时报错
+    "noFallthroughCasesInSwitch": true, // switch 语句中 case 未 break 且无后续逻辑时报错
+    
+    /* 5. 模块与导入配置 */
+    "esModuleInterop": true, // 兼容 CommonJS 模块导入（允许用 import require 导入的模块，如 const path = require('path')）
+    "allowSyntheticDefaultImports": true, // 允许导入无默认导出的模块（如 import React from 'react'）
+    "moduleResolution": "Node", // 模块解析策略（Node 对应 Node.js 的模块解析规则，经典/推荐）
+    "resolveJsonModule": true, // 允许导入 .json 文件（直接 import json 文件作为模块）
+    
+    /* 6. 其他可选配置 */
+    "removeComments": false, // 编译后是否移除注释（开发环境保留，生产环境可设为 true）
+    "skipLibCheck": true, // 跳过第三方库（node_modules）的类型检查，提升编译速度
+    "forceConsistentCasingInFileNames": true // 强制文件名大小写一致（避免跨操作系统路径问题）
+  },
+  /* 7. 文件包含与排除 */
+  "include": ["./src/**/*"], // 需要编译的文件（src 目录下所有子目录的所有文件）
+  "exclude": ["./node_modules", "./dist"], // 排除不需要编译的文件/目录
+  "references": [] // 可选：项目引用（多项目仓库场景使用）
+}
