@@ -1,4 +1,5 @@
 interface IC {
+  // 索引签名的作用是
   // 类型是string或者number
   [index: string]: any
   // [index: string]: string//会报错因为一个数组里面有很多其他属性 返回值是函数

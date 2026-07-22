@@ -1,9 +1,12 @@
 interface Ip {
   name: string
+  [key: string]: any
 }
 
 const info: Ip = {
-  name: 'xxx'
+  name: 'xxx',
+  age: 111,
+  ajsjs: 'sss'
 }
 
 interface IType {
